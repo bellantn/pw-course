@@ -4,7 +4,7 @@ In the pw-course repository, create a folder named lesson-3. Add a file named ke
 # KEY TAKEAWAYS
 ## Git 
 ### Undo actions
-- `git commit --amend`: edit the commit message with text editor
+- `git commit --amend`: edit the most recent commit and its message with text editor
 - `git commit --amend -m "message"`: edit the commit message without needing an editor, the new message `"message"` replaces the previous commit message immediately
 - `git restore --staged <file>` : unstage a file from Staging Area to Working Directory
 - `git reset HEAD~1` : undo the last commit from Local Repository to Working Directory
@@ -156,10 +156,43 @@ function <nameFunction>() {
 }
 ```
 
-### Scope of variable
+- Function không có parameter, không có return
+```
+function sayHello() {
+  console.log("Hello, world!");
+}
 
+sayHello(); // Gọi hàm, in ra "Hello, world!"
+```
 
-### Advance condition
+- Function không có parameter, có return
+```
+function getGreeting() {
+  return "Hello, world!";
+}
+
+const greeting = getGreeting(); // Gọi hàm và lưu giá trị trả về
+console.log(greeting); // In ra: "Hello, world!"
+```
+
+- Function có parameter, không có return
+```
+function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+
+greet("Bella); // Gọi hàm, in ra: "Hello, Bella!"
+```
+
+- Function có parameter, có return
+```
+function addNumbers(a, b) {
+  return a + b;
+}
+
+const sum = addNumbers(5, 10); // Gọi hàm và lưu giá trị trả về
+console.log(sum); // In ra: 15
+```
 
 ## Git
 `git checkout <revision>` - to revert to a specific revision

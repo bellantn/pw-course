@@ -10,6 +10,7 @@
 const height = 1.58;
 const weight = 57;
 const bmi = weight / (height * height);
+
 function calBMI() {
   if (bmi < 18.5) return "Thiếu cân";
   if (bmi < 25) return "Bình thường";
@@ -17,7 +18,7 @@ function calBMI() {
   if (bmi >= 30) return "Béo phì";
 }
 
-console.log(calBMI(height, weight));
+console.log(calBMI());
 
 //2. Viết một hàm để chuyển đổi nhiệt độ từ độ C sang độ F và ngược lại. Hàm sẽ nhận vào giá trị nhiệt độ và loại nhiệt độ ('C' hoặc 'F') và trả về nhiệt độ đã chuyển đổi.
 // Biết công thức chuyển đổi:
@@ -33,9 +34,10 @@ function convertTemp(temp, type) {
   }
 }
 //Từ độ C sang độ F
-console.log("100 độ C = " + convertTemp(100, "C") + " độ F");
+console.log("37 độ C = " + convertTemp(37, "C") + " độ F");
+
 //Từ độ F sang độ C
-console.log("250 độ F = " + convertTemp(250, "F") + " độ C");
+console.log("120 độ F = " + convertTemp(120, "F") + " độ C");
 
 //3. Khai báo một mảng các phần tử bất kì. Viết một hàm để tính tổng của các phần tử trong một mảng số.
 const arr = [1, 2, 3, 4, 5];
@@ -54,16 +56,56 @@ console.log(result3);
 // Biết:
 // ○ Số 0, số 1 không phải số nguyên tố.
 // ○ Các số nguyên tố là số chỉ chia hết cho 1 và chính nó
-
-console.log("bài này em không biết làm ạ");
+function isPrime(number) {
+  if ((number > 2 && number % 2 === 0) || number <= 1) {
+    return false;
+  } else {
+    let squareRoot = Math.sqrt(number);
+    for (let i = 2; i <= squareRoot; i++) {
+      if (number % i === 0) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+function filterPrimeNumber() {
+  const arr = [1, 9, 0, 4, 5, 3, 2, 11, 6, 7, 10];
+  const primeNumbers = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (isPrime(arr[i])) {
+      primeNumbers.push(arr[i]);
+    }
+  }
+  return primeNumbers;
+}
+const arrayPrimeNumber = filterPrimeNumber();
+console.log(`result: ${arrayPrimeNumber}`);
 
 //5. Tạo một function để cập nhật email cho người dùng trong một danh sách, dựa trên tên người dùng.
 //Đoạn code giả mã (pseudo code) như sau:
 // Khai báo mảng global các object có 2 thuộc tính: name, email
 // Khai báo hàm có 2 tham số: name, newEmail
 // Sử dụng vòng for, duyệt trong mảng, nếu gặp phần tử nào có tên trùng với tham số name, cập nhật giá trị email về newEmail
+const users = [
+  { name: "A", email: "userA@gmail.com" },
+  { name: "B", email: "userB@gmail.com" },
+  { name: "C", email: "userC@gmail.com" },
+  { name: "D", email: "userD@gmail.com" },
+];
+function updateEmail(name, newEmail) {
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].name === name) {
+      //kiểm tra tên
+      users[i].email = newEmail; //cập nhật email
+      return `Đã update thành công email của ${name}`;
+    }
+  }
+  return `Không tìm thấy ${name} trong danh sách users`;
+}
 
-console.log("chưa học tới hàm này ạ");
+console.log(updateEmail("A", "newemailA@hotmail.com"));
+console.log(users);
 
 //6. Viết một hàm tính điểm trung bình của các sinh viên dựa trên điểm số lưu trong một mảng các object.
 //Biết object có cấu trúc như sau: {“name”: “Alex”, score: 85}
@@ -117,7 +159,7 @@ console.log(isOpened(23));
 
 //9. Viết hàm có tham số là tuổi, in ra mức giá vé vào cổng tùy theo độ tuổi: trẻ em dưới 5 tuổi miễn phí, người lớn từ 18 tuổi trở lên là 100k, và trẻ em từ 6 đến 17 tuổi là 50k.
 function price(age) {
-  if (age < 5) {
+  if (age <= 5) {
     return "Trẻ em dưới 5 tuổi miễn phí";
   }
   if (age >= 18) {
@@ -132,7 +174,18 @@ console.log(price(31));
 console.log(price(6));
 
 //10. Viết hàm in ra tên tháng dựa vào số tháng được nhập vào. Sử dụng câu lệnh switch...case để xử lý.
-console.log("chưa học tới hàm này ạ");
+const month = 11;
+switch (month) {
+  case 10:
+    console.log("October");
+    break;
+  case 11:
+    console.log("November");
+    break;
+  case 12:
+    console.log("December");
+    break;
+}
 
 //11. Viết hàm nhập vào điểm số. In ra phân loại điểm số của học sinh: giỏi (>= 8), khá (>= 6.5 và < 8), trung bình (>= 5 và < 6.5), yếu (< 5).
 function studentGrade(score) {
