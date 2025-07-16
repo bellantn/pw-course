@@ -10,9 +10,9 @@ test('has title', async ({ page }) => {
 test('get started link', async ({ page }) => {
   await page.goto('https://material.playwrightvn.com/');
 
-  // Click the get started link.
+  // Click the Register Page link.
   await page.getByRole('link', { name: 'Bài học 1: Register Page' }).click();
 
-  // Expects page to have a heading with the name of Installation.
+  // Expects page to have a heading with the name of Registration.
   await expect(page.getByRole('heading', { name: 'Registration' })).toBeVisible();
 });
