@@ -205,10 +205,21 @@ false
 200
 ```
 
-- **Retrieve the index of an element**
+- **Retrieve the index of an element: `indexOf`**
 ```
 console.log(favoriteColors.indexOf("Black")); // 2
 console.log(favoriteColors.indexOf("Red")); // -1
+```
+
+- **Add elements to the array: `push`**
+```
+const arr = [1, 2];
+arr.push(3);
+
+console.log(arr);
+
+--Output:
+[1, 2, 3]
 ```
 
 ---
