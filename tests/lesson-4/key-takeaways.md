@@ -155,6 +155,7 @@ for (let i in arr) {
 
 ---
 - `forEach`: dùng nhiều cho array, lấy cả **value và index** ra mà không cần dùng đến logic nào cả
+
 **Structure**
 ```javascript
 array.forEach((value, index) => {
@@ -183,6 +184,7 @@ fruits.forEach((value, index) => {
 
 ---
 - `for ... of`: dùng cho array, dùng để lặp qua các **phần tử** của mảng
+
 **Structure**
 ```javascript
 for (const value of arr) {
@@ -407,7 +409,7 @@ console.log (newNumbers); // Output: [1, 2, 3, 4, 5] - thêm số 3 vào index t
 ```
 
 ---
-- `shift()`: loại bỏ phần tử đầu tiên của mảng, sẽ trả về phần tử bị loại đó, phương thức này làm thay đổi độ dài của mảng
+- `shift()`: loại bỏ và trả về phần tử đầu tiên của mảng, phương thức này làm thay đổi độ dài của mảng
 ```javascript
 let numbers = [1, 2, 3, 4];
 let firstElement = numbers.shift();
@@ -416,6 +418,17 @@ console.log(firstElement); // Output: 1
 console.log(numbers); // Output: [2, 3, 4]
 ```
 
+---
+- `pop()`: loại bỏ và trả về phần tử cuối cùng của mảng, làm thay đổi mảng gốc
+```javascript
+let numbers = [1, 2, 3, 4];
+let lastElement = numbers.pop();
+
+console.log(lastElement); // Output: 4
+console.log(numbers); // Output: [1, 2, 3]
+```
+
+---
 - `sort()`: sắp xếp phần tử của mảng theo thứ tự tăng dần/giảm dần, hoặc theo hàm so sánh được cung cấp, làm thay đổi mảng ban đầu
 ```javascript
 // sort mặc định: đổi phần tử thành chuỗi (Unicode - ASCII / UTF-16) rồi so sánh
