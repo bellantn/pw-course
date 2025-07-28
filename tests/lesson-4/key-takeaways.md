@@ -318,6 +318,15 @@ console.log(str.indexOf("JS")); // Output: -1 (không tìm thấy)
 ```
 
 ---
+- `toString(16)`: chuyển đổi một số thập phân sao hệ thập lục phân
+```javascript
+let decimalNum = 120;
+let hexadecimalNum = decimalNum.toString(16);
+
+console.log(hexadecimalNum); // Output: 78
+```
+
+---
 ## Array utils function
 - `map()`: tạo ra mảng mới bằng cách áp dụng 1 hàm lên từng phần tử trong mảng gốc
 ```javascript
