@@ -209,6 +209,12 @@ for (let i = 0; i < str.length(); i++) {
     console.log(str[i]);
 }
 
+---
+
+for (let letter of str) {
+    console.log(letter);
+}
+
 //result
 B
 E
