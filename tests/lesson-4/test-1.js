@@ -6,7 +6,17 @@ let crew = ["Bella", "Trang Trần", "Hân", "Tuấn Anh", "Anh Tú"];
 1. Khởi động Tàu Vũ trụ K16
 */
 function launchShip(crew) {
-    return `"Chuẩn bị khởi động! Phi hành đoàn gồm: ${crew} sẽ đồng hành cùng bạn trong chuyến phiêu lưu ${mission}.`;
+    let crewList = " ";
+
+    for (let i = 0; i < crew.length; i++) {
+        if (i === crew.length - 1) {
+            crewList = crewList + crew[i];
+        } else {
+            crewList = crewList + crew[i] + ", ";
+        }
+    }
+
+    return `"Chuẩn bị khởi động! Phi hành đoàn gồm: ${crewList} sẽ đồng hành cùng bạn trong chuyến phiêu lưu ${mission}.`;
 }
 
 console.log(launchShip(crew));
