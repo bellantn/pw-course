@@ -81,6 +81,7 @@ greet(); // Output: Hello K16
 <br>
 ```
 
+---
 **Common HTML tags**
 1. Thẻ cấu trúc (Structural Tags)
 - `<div>` (viết tắt của devide): chia các khối nội dung trong trang web 
@@ -259,7 +260,7 @@ test ('Click', async ({ page }) => {
    page.locator("//input").check();
    page.locator("//input").setChecked(false);
 ```
-> `setChecked(false)`: chỉ work với Checkbox thôi, không apply cho Radio button
+> *`setChecked(false)`: chỉ work với Checkbox thôi, không apply cho Radio button*
 
 ---
 - Select option
@@ -267,18 +268,18 @@ test ('Click', async ({ page }) => {
 await page.locator("//select[@id='country']").selectOption(australia);
 ```
 
-> Hàm `select option` của PW build chỉ work với cặp thẻ `select` & `option`
+> *Hàm `select option` của PW build chỉ work với cặp thẻ `select` & `option`*
 
 ---
 - Set input file
 ```typescript
 await page.locator("//input[@id='profile']").setInputFile("<file_path>");
 ```
-> File phải được đưa vào repo (`tests/test-data/file.img`) và push lên Github
+> *File phải được đưa vào repo (`tests/test-data/file.img`) và push lên Github*
 
 ---
 - Confirmation dialog
 ```typescript
-page.on('dialog', async dialog => dialog.accept);
+page.on('dialog', async dialog => dialog.accept());
 await page.click("//button[text()='Delete']");
 ```
